@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html, body, input, button, select, textarea {
+        font-family: 'Outfit', sans-serif !important;
+    }
+}
+
+body {
+    margin: 0;
+    background-color: #0A192F;
+    color: #F8FAFC;
+}
+
+/* Fondo Navy Principal con Malla Luminosa */
+.bg-navy-mesh {
+    background-color: #0A192F;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(29, 78, 216, 0.28) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(15, 37, 71, 0.9) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.35) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(200, 16, 46, 0.15) 0px, transparent 50%);
+    background-attachment: fixed;
+}
+
+/* Animación de Orbes para el Login */
+@keyframes floatSlow {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(35px, -45px) scale(1.08); }
+    66% { transform: translate(-25px, 25px) scale(0.95); }
+}
+
+@keyframes floatReverse {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    50% { transform: translate(-40px, -30px) scale(1.12); }
+}
+
+.orb-navy-1 {
+    animation: floatSlow 14s ease-in-out infinite;
+}
+
+.orb-navy-2 {
+    animation: floatReverse 18s ease-in-out infinite;
+}
+
+.orb-crimson {
+    animation: floatSlow 16s ease-in-out infinite reverse;
+}
+
+/* Paneles Glassmorphism sobre Navy Blue */
+.glass-panel {
+    background: rgba(15, 37, 71, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 20px 50px rgba(2, 12, 27, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.18);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(2, 12, 27, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-card-hover:hover {
+    transform: translateY(-4px) scale(1.015);
+    background: rgba(255, 255, 255, 0.11);
+    border-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 16px 32px rgba(2, 12, 27, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Botones con Efecto de Alza estilo Apple */
+.btn-apple-crimson {
+    background: linear-gradient(180deg, #E11D48 0%, #C8102E 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 8px 20px -4px rgba(200, 16, 46, 0.55), inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-apple-crimson:hover {
+    transform: translateY(-3px) scale(1.015);
+    background: linear-gradient(180deg, #F43F5E 0%, #D90429 100%);
+    box-shadow: 0 16px 32px -4px rgba(200, 16, 46, 0.75), inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+}
+
+.btn-apple-crimson:active {
+    transform: translateY(0px) scale(0.985);
+}
+
+.btn-apple-navy {
+    background: linear-gradient(180deg, rgba(30, 58, 138, 0.85) 0%, rgba(15, 37, 71, 0.95) 100%);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 20px -4px rgba(2, 12, 27, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
+    transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-apple-navy:hover {
+    transform: translateY(-3px) scale(1.015);
+    background: linear-gradient(180deg, rgba(37, 99, 235, 0.85) 0%, rgba(30, 58, 138, 0.95) 100%);
+    border-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 14px 28px -4px rgba(29, 78, 216, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.35);
+}
+
+.btn-apple-navy:active {
+    transform: translateY(0px) scale(0.985);
+}
+
+/* Scrollbar personalizada para tema Navy */
+.custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); border-radius: 10px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(200, 16, 46, 0.7); }
+
+.animate-fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
