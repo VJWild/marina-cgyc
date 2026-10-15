@@ -43,7 +43,7 @@
         <!-- Visor del Plano -->
         <div class="flex-1 glass-panel rounded-3xl p-4 overflow-auto custom-scrollbar flex items-center justify-center relative">
             <img
-                src="{{ asset('img/SECCIONES DEL MAPA.png') }}"
+                src="{{ asset('img/MAPA SATELITAL CGYC.jpg') }}"
                 alt="Plano de Secciones Marina CGYC"
                 :style="'width: ' + zoom + '%; max-width: none;'"
                 class="rounded-2xl shadow-2xl transition-all duration-200 select-none"

@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: marina-cgyc
+    runtime: docker
+    plan: free
+    envVars:
+      - key: APP_NAME
+        value: "Marina CGYC"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DATABASE_URL
+        fromDatabase:
+          name: marina-cgyc-db
+          property: connectionString
+
+databases:
+  - name: marina-cgyc-db
+    databaseName: marina_cgyc
+    user: marina_cgyc_user
+    plan: free

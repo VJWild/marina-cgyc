@@ -284,7 +284,7 @@
             <!-- Contenedor del Plano -->
             <div class="glass-card rounded-3xl p-3 sm:p-4 overflow-auto custom-scrollbar max-h-[540px] flex items-center justify-center">
                 <img
-                    src="{{ asset('img/SECCIONES DEL MAPA.png') }}"
+                    src="{{ asset('img/MAPA SATELITAL CGYC.jpg') }}"
                     alt="Plano de Secciones Marina CGYC"
                     :style="'width: ' + mapZoom + '%; max-width: none;'"
                     class="rounded-2xl shadow-2xl transition-all duration-200 select-none"
