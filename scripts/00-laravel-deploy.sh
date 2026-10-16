@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
-echo "Instalando dependencias de Composer para producción..."
-composer install --no-dev --working-dir=/var/www/html
+set -e
 
-echo "Generando caché de configuración, rutas y vistas..."
-php artisan config:cache
-php artisan route:cache
-php artisan view:cache
+echo "Instalando dependencias de Composer..."
+composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --working-dir=/var/www/html
 
-echo "Ejecutando migraciones en PostgreSQL..."
-php artisan migrate --force
+echo "Cacheando configuracion y rutas..."
+php artisan config:cache --no-interaction
+php artisan route:cache --no-interaction
+php artisan view:cache --no-interaction
 
-echo "Cargando catálogo inicial de Zonas, Muelles y Embarcaciones..."
-php artisan db:seed --class=MarinaInitialSeeder --force
+echo "Ejecutando migraciones y seeder inicial..."
+php artisan migrate --force --no-interaction
+php artisan db:seed --class=MarinaInitialSeeder --force --no-interaction
