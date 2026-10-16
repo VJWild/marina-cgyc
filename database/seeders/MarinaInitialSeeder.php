@@ -142,16 +142,15 @@ class MarinaInitialSeeder extends Seeder
             }
         }
 
-        // Documento de prueba próximo a vencer para visualizar en el Dashboard
-        $firstBoat = Boat::first();
-        if ($firstBoat) {
+// Documento de prueba próximo a vencer (sin la columna 'notes')
+        $aventura = Boat::where('name', 'AVENTURA')->first();
+        if ($aventura) {
             BoatDocument::updateOrCreate(
-                ['boat_id' => $firstBoat->id, 'document_type' => 'Póliza de Responsabilidad Civil'],
+                ['boat_id' => $aventura->id, 'document_type' => 'Certificado de Radio'],
                 [
-                    'document_number' => 'POL-2026-8891',
-                    'issued_at' => now()->subMonths(11),
-                    'expires_at' => now()->addDays(14),
-                    'notes' => 'Renovación pendiente por consignar en Capitanía.',
+                    'document_number' => 'INEA/CAGSI/2025/13-A-412',
+                    'issued_at' => now()->subYear()->addDays(14)->format('Y-m-d'),
+                    'expires_at' => now()->addDays(14)->format('Y-m-d'),
                 ]
             );
         }
