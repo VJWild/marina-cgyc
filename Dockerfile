@@ -26,6 +26,9 @@ WORKDIR /var/www/html
 COPY . .
 COPY --from=assets /app/public/build ./public/build
 
+# Eliminar cualquier .env o cache previa para forzar el uso de variables de Render
+RUN rm -f .env bootstrap/cache/*.php
+
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
 RUN chmod -R 775 storage bootstrap/cache
 
@@ -35,5 +38,5 @@ ENV LOG_CHANNEL=stderr
 
 EXPOSE 10000
 
-# Script de inicio seguro que espera a que la base de datos responda y arranca el servidor
-CMD sh -c "php artisan config:clear && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan migrate --force --no-interaction && php artisan db:seed --class=MarinaInitialSeeder --force --no-interaction && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"
+# Al arrancar: limpia cache, migra en PostgreSQL, ejecuta el seeder y levanta el servidor
+CMD sh -c "php artisan config:clear && php artisan route:cache && php artisan view:cache && php artisan migrate --force --no-interaction && php artisan db:seed --class=MarinaInitialSeeder --force --no-interaction && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"
