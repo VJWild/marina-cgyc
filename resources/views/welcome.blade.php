@@ -63,7 +63,7 @@
                 </a>
             @else
                 <a href="{{ route('login') }}" class="btn-apple-crimson px-5 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider flex items-center justify-center">
-                    <i class="fas fa-lock mr-2"></i>Iniciar Sesión
+                    <i class="fas fa-lock mr-2"></i>Ingresar
                 </a>
             @endauth
         </div>
