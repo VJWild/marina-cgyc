@@ -14,16 +14,34 @@ class MarinaInitialSeeder extends Seeder
 {
     public function run(): void
     {
-// 1. Usuario Administrador Inicial
-        User::updateOrCreate(
-            ['email' => 'comodoro@marinacgyc'],
+        // 1. Usuarios Administradores Iniciales
+        // Limpia el correo anterior sin .com en caso de que exista de una ejecución previa
+        User::where('email', 'comodoro@marinacgyc')->delete();
+
+        $admins = [
             [
-                'name' => 'Victor J. González',
-                'password' => Hash::make('Vjgg8544'),
-                'role' => 'admin',
-                'is_active' => true,
-            ]
-        );
+                'email' => 'comodoro@marinacgyc.com',
+                'name' => 'Victor J. Gonzalez',
+                'password' => 'Vjgg8544',
+            ],
+            [
+                'email' => 'gerencia@marinacgyc.com',
+                'name' => 'Armi J. Vasquez',
+                'password' => '12345678',
+            ],
+        ];
+
+        foreach ($admins as $admin) {
+            User::updateOrCreate(
+                ['email' => $admin['email']],
+                [
+                    'name' => $admin['name'],
+                    'password' => Hash::make($admin['password']),
+                    'role' => 'admin',
+                    'is_active' => true,
+                ]
+            );
+        }
 
         // 2. Definición de las 8 Zonas Cromáticas
         $zonesConfig = [

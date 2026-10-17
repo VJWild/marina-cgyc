@@ -4,20 +4,20 @@
     <div class="flex-1 flex flex-col h-full overflow-hidden p-4 md:p-6">
 
         <!-- Cabecera Operativa -->
-        <div class="glass-panel rounded-3xl px-6 py-4 flex flex-col xl:flex-row xl:items-center justify-between gap-4 shrink-0 mb-6">
+        <div class="glass-panel rounded-3xl px-6 py-4 flex flex-col xl:flex-row xl:items-center justify-between gap-4 shrink-0 mb-6" style="flex-wrap: wrap;">
             <div>
                 <div class="flex items-center gap-2.5">
                     <h1 class="text-xl md:text-2xl font-bold text-white tracking-tight">Muelles</h1>
-                    <span class="text-[10px] uppercase tracking-widest font-bold bg-[#C8102E]/25 text-rose-300 border border-[#C8102E]/40 px-3 py-0.5 rounded-full">
+                    <span class="text-[10px] uppercase tracking-widest font-bold bg-[#C8102E]/25 text-rose-300 border border-[#C8102E]/40 px-3 py-0.5 rounded-full" style="white-space: nowrap;">
                         En vivo
                     </span>
                 </div>
                 <p class="text-xs text-blue-200/70 mt-1">Asignación de puestos, consulta de información y registro de zarpes.</p>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3" style="flex-wrap: wrap;">
                 <!-- Buscador en tiempo real -->
-                <div class="relative w-full sm:w-64">
+                <div class="relative w-full sm:w-64" style="flex: 1 1 200px;">
                     <i class="fas fa-search absolute left-4 top-3.5 text-blue-200/50 text-sm"></i>
                     <input
                         wire:model.live.debounce.200ms="search"
@@ -28,17 +28,17 @@
                 </div>
 
                 <!-- Filtros rápidos de estado -->
-                <div class="flex bg-[#061020]/60 p-1.5 rounded-2xl border border-white/15 text-[11px] font-bold uppercase tracking-wider">
-                    <button wire:click="$set('statusFilter', 'all')" class="px-3 py-1.5 rounded-xl transition-all {{ $statusFilter === 'all' ? 'btn-apple-navy' : 'text-blue-200/70 hover:text-white' }}">
+                <div class="flex items-center bg-[#061020]/60 p-1.5 rounded-2xl border border-white/15 text-[10px] md:text-[11px] font-bold uppercase tracking-wider" style="flex: 1 1 auto;">
+                    <button wire:click="$set('statusFilter', 'all')" style="white-space: nowrap;" class="flex-1 px-2.5 md:px-3 py-1.5 rounded-xl text-center transition-all {{ $statusFilter === 'all' ? 'btn-apple-navy' : 'text-blue-200/70 hover:text-white' }}">
                         Todos
                     </button>
-                    <button wire:click="$set('statusFilter', 'en_marina')" class="px-3 py-1.5 rounded-xl transition-all {{ $statusFilter === 'en_marina' ? 'btn-apple-navy' : 'text-blue-200/70 hover:text-white' }}">
+                    <button wire:click="$set('statusFilter', 'en_marina')" style="white-space: nowrap;" class="flex-1 px-2.5 md:px-3 py-1.5 rounded-xl text-center transition-all {{ $statusFilter === 'en_marina' ? 'btn-apple-navy' : 'text-blue-200/70 hover:text-white' }}">
                         En Marina
                     </button>
-                    <button wire:click="$set('statusFilter', 'de_viaje')" class="px-3 py-1.5 rounded-xl transition-all {{ $statusFilter === 'de_viaje' ? 'btn-apple-crimson' : 'text-blue-200/70 hover:text-white' }}">
+                    <button wire:click="$set('statusFilter', 'de_viaje')" style="white-space: nowrap;" class="flex-1 px-2.5 md:px-3 py-1.5 rounded-xl text-center transition-all {{ $statusFilter === 'de_viaje' ? 'btn-apple-crimson' : 'text-blue-200/70 hover:text-white' }}">
                         En Zarpe
                     </button>
-                    <button wire:click="$set('statusFilter', 'free')" class="px-3 py-1.5 rounded-xl transition-all {{ $statusFilter === 'free' ? 'btn-apple-navy' : 'text-blue-200/70 hover:text-white' }}">
+                    <button wire:click="$set('statusFilter', 'free')" style="white-space: nowrap;" class="flex-1 px-2.5 md:px-3 py-1.5 rounded-xl text-center transition-all {{ $statusFilter === 'free' ? 'btn-apple-navy' : 'text-blue-200/70 hover:text-white' }}">
                         Libres
                     </button>
                 </div>
@@ -200,7 +200,7 @@
                     @if ($selectedSlip->boats->isNotEmpty())
                         <div class="space-y-4">
                             <h3 class="text-blue-200/80 font-bold uppercase tracking-[0.16em] text-[10px] flex items-center">
-                                <i class="fas fa-file-invoice mr-2 text-blue-300/60"></i> Ficha Técnica y Control de Viaje
+                                <i class="fas fa-file-invoice mr-2 text-blue-300/60"></i> Información Detallada
                             </h3>
 
                             @foreach ($selectedSlip->boats as $boat)
@@ -305,7 +305,7 @@
                     <div class="pt-2 border-t border-white/10">
                         <h3 class="text-blue-200/80 font-bold mb-3 uppercase tracking-[0.15em] text-[10px] flex items-center">
                             <i class="fas fa-anchor mr-2 text-blue-300/60"></i>
-                            {{ $selectedSlip->boats->isNotEmpty() ? 'Amarrar Embarcación Adicional' : 'Asignar Embarcación a este Muelle' }}
+                            {{ $selectedSlip->boats->isNotEmpty() ? 'Asigna un puesto a una Embarcación' : 'Asignar Embarcación a este Muelle' }}
                         </h3>
 
                         <div class="relative mb-4">
@@ -386,7 +386,7 @@
                         Cancelar
                     </button>
                     <button wire:click="confirmMoveBoat" class="btn-apple-crimson px-6 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider">
-                        Confirmar Mudanza
+                        Confirmar Reubicación
                     </button>
                 </div>
             </div>

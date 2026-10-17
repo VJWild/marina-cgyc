@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="{{ asset('img/logocgyc.png') }}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 <body class="h-screen w-full overflow-hidden bg-navy-mesh text-white antialiased" x-data="{ sidebarOpen: false }">
 
@@ -22,10 +23,10 @@
 
 <div class="flex h-screen w-full overflow-hidden">
 
-    <!-- SIDEBAR DE NAVEGACIÓN (Navy Profundo + Glassmorphism) -->
+    <!-- SIDEBAR DE NAVEGACIÓN (Oculta por defecto en móvil con -translate-x-full) -->
     <aside
-        :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
-        class="fixed inset-y-0 left-0 z-50 w-72 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0 flex flex-col p-4 lg:p-5 lg:pr-0 shrink-0"
+        :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+        class="fixed inset-y-0 left-0 z-50 w-72 -translate-x-full lg:translate-x-0 transform transition-transform duration-300 ease-in-out lg:relative flex flex-col p-4 lg:p-5 lg:pr-0 shrink-0"
     >
         <div class="glass-panel rounded-[2rem] flex-1 flex flex-col justify-between p-5 overflow-hidden relative">
             <!-- Luz decorativa interna -->
@@ -34,40 +35,44 @@
             <div>
                 <!-- Logo y Cabecera Sidebar -->
                 <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
-                    <a href="{{ route('dashboard') }}" class="flex items-center gap-3.5 group">
+                    <a href="{{ route('dashboard') }}" @click="sidebarOpen = false" class="flex items-center gap-3.5 group">
                         <img src="{{ asset('img/logocgyc.png') }}" alt="Logo CGYC" class="h-14 w-auto object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105">
                         <div>
                             <h2 class="text-base font-bold text-white tracking-tight leading-none">Marina CGYC</h2>
                             <span class="text-[9px] uppercase tracking-[0.22em] text-blue-200/70 font-semibold block mt-1">Capitanía</span>
                         </div>
                     </a>
-                    <button @click="sidebarOpen = false" class="lg:hidden w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20">
+                    <button type="button" @click="sidebarOpen = false" class="lg:hidden w-8 h-8 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20">
                         <i class="fas fa-times text-xs"></i>
                     </button>
                 </div>
 
                 <!-- Menú Principal -->
-                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-200/50 px-3 mb-3">Módulos Operativos</p>
+                <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-200/50 px-3 mb-3">Explora la Marina</p>
                 <nav class="space-y-2">
                     <a href="{{ route('dashboard') }}"
+                       @click="sidebarOpen = false"
                        class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 {{ request()->routeIs('dashboard') ? 'btn-apple-crimson shadow-lg' : 'text-blue-100/75 hover:text-white hover:bg-white/10 hover:translate-x-1' }}">
                         <i class="fas fa-chart-pie text-sm w-5 text-center"></i>
                         <span>Inicio</span>
                     </a>
 
                     <a href="{{ route('slips.index') }}"
+                       @click="sidebarOpen = false"
                        class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 {{ request()->routeIs('slips.*') ? 'btn-apple-crimson shadow-lg' : 'text-blue-100/75 hover:text-white hover:bg-white/10 hover:translate-x-1' }}">
                         <i class="fas fa-anchor text-sm w-5 text-center"></i>
                         <span>Muelles</span>
                     </a>
 
                     <a href="{{ route('boats.index') }}"
+                       @click="sidebarOpen = false"
                        class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 {{ request()->routeIs('boats.*') ? 'btn-apple-crimson shadow-lg' : 'text-blue-100/75 hover:text-white hover:bg-white/10 hover:translate-x-1' }}">
                         <i class="fas fa-ship text-sm w-5 text-center"></i>
                         <span>Embarcaciones</span>
                     </a>
 
                     <a href="{{ route('map.index') }}"
+                       @click="sidebarOpen = false"
                        class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 {{ request()->routeIs('map.*') ? 'btn-apple-crimson shadow-lg' : 'text-blue-100/75 hover:text-white hover:bg-white/10 hover:translate-x-1' }}">
                         <i class="fas fa-map-location-dot text-sm w-5 text-center"></i>
                         <span>Plano General</span>
@@ -110,15 +115,15 @@
         <header class="lg:hidden px-4 pt-4 shrink-0">
             <div class="glass-panel rounded-2xl px-4 py-3 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <button @click="sidebarOpen = true" class="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center">
+                    <button type="button" @click="sidebarOpen = true" class="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center">
                         <i class="fas fa-bars"></i>
                     </button>
                     <img src="{{ asset('img/logocgyc.png') }}" alt="Logo CGYC" class="h-10 w-auto object-contain">
                     <span class="font-bold text-sm tracking-tight text-white">Marina CGYC</span>
                 </div>
                 <span class="text-[10px] uppercase tracking-widest font-bold bg-white/10 text-blue-200 px-3 py-1 rounded-full">
-                        Capitanía
-                    </span>
+                    Capitanía
+                </span>
             </div>
         </header>
 
@@ -128,5 +133,7 @@
         </main>
     </div>
 </div>
+
+@livewireScripts
 </body>
 </html>
