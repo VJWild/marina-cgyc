@@ -4,7 +4,7 @@
         <!-- Cabecera y Leyenda de Ocupación por Zona -->
         <div class="glass-panel rounded-3xl px-6 py-4 mb-5 shrink-0 flex flex-col xl:flex-row xl:items-center justify-between gap-4">
             <div>
-                <h1 class="text-xl md:text-2xl font-bold text-white tracking-tight">Plano General de la Marina Caraballeda Golf & Yacht Club</h1>
+                <h1 class="text-xl md:text-2xl font-bold text-white tracking-tight">Plano General de la Marina</h1>
                 <p class="text-xs text-blue-200/70">Distribución física de muelles y resumen de ocupación por zona cromática.</p>
             </div>
 
