@@ -52,13 +52,13 @@
                     <a href="{{ route('dashboard') }}"
                        class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 {{ request()->routeIs('dashboard') ? 'btn-apple-crimson shadow-lg' : 'text-blue-100/75 hover:text-white hover:bg-white/10 hover:translate-x-1' }}">
                         <i class="fas fa-chart-pie text-sm w-5 text-center"></i>
-                        <span>Dashboard</span>
+                        <span>Inicio</span>
                     </a>
 
                     <a href="{{ route('slips.index') }}"
                        class="flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all duration-300 {{ request()->routeIs('slips.*') ? 'btn-apple-crimson shadow-lg' : 'text-blue-100/75 hover:text-white hover:bg-white/10 hover:translate-x-1' }}">
                         <i class="fas fa-anchor text-sm w-5 text-center"></i>
-                        <span>Control de Muelles</span>
+                        <span>Muelles</span>
                     </a>
 
                     <a href="{{ route('boats.index') }}"
