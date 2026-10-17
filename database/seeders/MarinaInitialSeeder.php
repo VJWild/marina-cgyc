@@ -23,14 +23,6 @@ class MarinaInitialSeeder extends Seeder
                 'role' => 'admin',
                 'is_active' => true,
             ]
-
-            ['email' => 'gerencia@marinacgyc'],
-            [
-                'name' => 'Armi J. Vasquez',
-                'password' => Hash::make('12345678'),
-                'role' => 'admin',
-                'is_active' => true,
-            ]
         );
 
         // 2. Definición de las 8 Zonas Cromáticas
