@@ -28,7 +28,7 @@ new #[Layout('layouts.guest')] class extends Component
         <!-- Correo Electrónico -->
         <div>
             <label for="email" class="block text-[11px] font-bold uppercase tracking-[0.18em] text-blue-100/90 mb-2">
-                Correo Institucional
+                Correo
             </label>
             <div class="relative">
                 <i class="fas fa-envelope absolute left-4 top-3.5 text-blue-200/50 text-sm pointer-events-none"></i>
@@ -40,7 +40,7 @@ new #[Layout('layouts.guest')] class extends Component
                     required
                     autofocus
                     autocomplete="username"
-                    placeholder="admin@marinacgyc.com"
+                    placeholder="ejemplo@marinacgyc.com"
                     class="w-full pl-11 pr-4 py-3.5 glass-card rounded-2xl text-sm text-white placeholder-blue-200/40 focus:bg-white/15 focus:ring-2 focus:ring-blue-400/40 focus:border-white/30 outline-none transition-all"
                 >
             </div>
@@ -54,7 +54,7 @@ new #[Layout('layouts.guest')] class extends Component
         <!-- Contraseña -->
         <div>
             <label for="password" class="block text-[11px] font-bold uppercase tracking-[0.18em] text-blue-100/90 mb-2">
-                Contraseña de Acceso
+                Contraseña
             </label>
             <div class="relative">
                 <i class="fas fa-lock absolute left-4 top-3.5 text-blue-200/50 text-sm pointer-events-none"></i>
@@ -118,7 +118,7 @@ new #[Layout('layouts.guest')] class extends Component
                 class="btn-apple-crimson w-full py-4 px-6 rounded-2xl font-bold text-xs uppercase tracking-[0.2em] flex items-center justify-center gap-2.5 disabled:opacity-60 disabled:cursor-not-allowed"
             >
                 <span wire:loading.remove wire:target="login" class="flex items-center gap-2">
-                    <span>Ingresar a la Marina</span>
+                    <span>Ingresa</span>
                     <i class="fas fa-arrow-right text-[11px]"></i>
                 </span>
 

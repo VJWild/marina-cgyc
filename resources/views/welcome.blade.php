@@ -75,10 +75,13 @@
     </div>
 
     <!-- Contenedor Mapa -->
-    <div id="viewMap" class="hidden flex-1 overflow-auto relative glass-panel rounded-3xl p-4">
-        <div class="w-[1600px] h-[1100px] mx-auto bg-no-repeat bg-center rounded-2xl relative z-10"
-             style="background-image: url('{{ asset('MAPA SATELITAL CGYC.jpg') }}'); background-size: contain;">
-        </div>
+    <div class="flex-1 glass-panel rounded-3xl p-4 overflow-auto custom-scrollbar flex items-center justify-center relative">
+        <img
+            src="{{ asset('img/MAPA SATELITAL CGYC.jpg') }}"
+            alt="Plano de Secciones Marina CGYC"
+            :style="'width: ' + zoom + '%; max-width: none;'"
+            class="rounded-2xl shadow-2xl transition-all duration-200 select-none"
+        >
     </div>
 </div>
 

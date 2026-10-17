@@ -5,14 +5,14 @@
         <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-2.5">
                 <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight truncate">
-                    Directorio Maestro de Embarcaciones
+                    Directorio de Embarcaciones
                 </h1>
                 <span class="inline-flex items-center whitespace-nowrap shrink-0 text-[10px] uppercase tracking-widest font-bold bg-white/10 text-blue-200 border border-white/15 px-3 py-0.5 rounded-full">
                     {{ $counts['all'] }} Activas
                 </span>
             </div>
             <p class="text-xs text-blue-200/70 mt-1">
-                Control de armadores, acciones de socios, dimensiones técnicas y certificados INEA.
+                Consulta la información detallada de las Embarcaciones de la Marina
             </p>
         </div>
 

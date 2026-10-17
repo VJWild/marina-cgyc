@@ -9,10 +9,10 @@
                 <div class="flex items-center gap-2.5">
                     <h1 class="text-xl md:text-2xl font-bold text-white tracking-tight">Muelles</h1>
                     <span class="text-[10px] uppercase tracking-widest font-bold bg-[#C8102E]/25 text-rose-300 border border-[#C8102E]/40 px-3 py-0.5 rounded-full">
-                        Operaciones en Vivo
+                        En vivo
                     </span>
                 </div>
-                <p class="text-xs text-blue-200/70 mt-1">Asignación de puestos, despacho de zarpes con destino y control de retornos.</p>
+                <p class="text-xs text-blue-200/70 mt-1">Asignación de puestos, consulta de información y registro de zarpes.</p>
             </div>
 
             <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
@@ -277,7 +277,7 @@
                                                 wire:click="openSailingModal({{ $boat->id }})"
                                                 class="btn-apple-crimson w-full py-3 px-4 rounded-2xl text-[11px] font-bold uppercase tracking-widest flex items-center justify-center gap-2"
                                             >
-                                                <i class="fas fa-compass"></i> Autorizar Zarpe de Viaje
+                                                <i class="fas fa-compass"></i> Registrar Zarpe
                                             </button>
                                         @endif
 

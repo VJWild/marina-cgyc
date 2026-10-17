@@ -5,22 +5,22 @@
         <div class="glass-panel rounded-3xl px-5 sm:px-6 py-4 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
             <div>
                 <div class="flex flex-wrap items-center gap-2.5">
-                    <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Centro de Control — Capitanía CGYC</h1>
+                    <h1 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Bienvenido</h1>
                     <span class="inline-flex items-center whitespace-nowrap shrink-0 text-[10px] uppercase tracking-widest font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 px-3 py-0.5 rounded-full">
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-ping"></span>En Línea
                     </span>
                 </div>
                 <p class="text-xs text-blue-200/70 mt-1">
-                    Resumen operativo de embarcaciones en marina, despachos de zarpe, disponibilidad de muelles y vencimientos INEA.
+                    Resumen de Operaciones de la Marina
                 </p>
             </div>
 
             <div class="flex flex-wrap items-center gap-3 shrink-0">
                 <a href="{{ route('slips.index') }}" class="btn-apple-navy px-4 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 whitespace-nowrap">
-                    <i class="fas fa-anchor"></i> Control de Muelles
+                    <i class="fas fa-anchor"></i> Consultar Muelles
                 </a>
                 <a href="{{ route('boats.index') }}" class="btn-apple-crimson px-4 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider inline-flex items-center gap-2 whitespace-nowrap">
-                    <i class="fas fa-ship"></i> Gestionar Embarcaciones
+                    <i class="fas fa-ship"></i> Ver Embarcaciones
                 </a>
             </div>
         </div>
@@ -107,7 +107,7 @@
                         <h2 class="text-sm sm:text-base font-bold text-white uppercase tracking-wider flex items-center gap-2">
                             <i class="fas fa-triangle-exclamation text-[#C8102E]"></i> Documentos Próximos a Vencer / Vencidos
                         </h2>
-                        <p class="text-[11px] text-blue-200/65 mt-0.5">Control de Licencia de Navegación y Certificado de Radio (30 días)</p>
+                        <p class="text-[11px] text-blue-200/65 mt-0.5">Hay documentos proximos a vencer que requieren atención</p>
                     </div>
                     <a href="{{ route('boats.index') }}" class="text-[11px] font-bold text-blue-200 hover:text-white underline whitespace-nowrap shrink-0">
                         Ver todos
@@ -187,7 +187,7 @@
                         <p class="text-[11px] text-blue-200/65 mt-0.5">Monitoreo de viajes activos, destinos y retorno estimado</p>
                     </div>
                     <a href="{{ route('slips.index') }}" class="text-[11px] font-bold text-blue-200 hover:text-white underline whitespace-nowrap shrink-0">
-                        Gestionar Zarpes
+                        Registrar Zarpe
                     </a>
                 </div>
 
@@ -246,8 +246,8 @@
         <div class="glass-panel rounded-[2rem] p-5 sm:p-6" x-data="{ mapZoom: 100 }">
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-5 mb-5 border-b border-white/10">
                 <div>
-                    <h2 class="text-base sm:text-lg font-bold text-white tracking-tight">Plano de Referencia y Ocupación por Zona</h2>
-                    <p class="text-xs text-blue-200/70">Distribución general de las 8 secciones cromáticas de la Marina Caraballeda.</p>
+                    <h2 class="text-base sm:text-lg font-bold text-white tracking-tight">Plano Satelital</h2>
+                    <p class="text-xs text-blue-200/70">Distribución de los puestos de la Marina Caraballeda Golf & Yacht Club</p>
                 </div>
 
                 <div class="flex items-center gap-2 shrink-0">
