@@ -16,9 +16,17 @@ class MarinaInitialSeeder extends Seeder
     {
 // 1. Usuario Administrador Inicial
         User::updateOrCreate(
-            ['email' => 'admin@marinacgyc.com'],
+            ['email' => 'comodoro@marinacgyc'],
             [
-                'name' => 'Capitanía Marina CGYC',
+                'name' => 'Victor J. González',
+                'password' => Hash::make('Vjgg8544'),
+                'role' => 'admin',
+                'is_active' => true,
+            ]
+
+            ['email' => 'gerencia@marinacgyc'],
+            [
+                'name' => 'Armi J. Vasquez',
                 'password' => Hash::make('12345678'),
                 'role' => 'admin',
                 'is_active' => true,

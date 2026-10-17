@@ -11,6 +11,7 @@ services:
       - key: APP_DEBUG
         value: false
       - key: APP_KEY
+       value: "base64:Yq60XfZ5B5qFrueEvInTTvj5z2CfqeWYPcbuHp7unfU="
         generateValue: true
       - key: DB_CONNECTION
         value: pgsql
